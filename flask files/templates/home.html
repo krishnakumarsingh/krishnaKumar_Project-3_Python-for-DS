@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>House Loan Eligibility Checker</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">                    
+    </head>
+    <body></br></br></br>
+        <div align="center">
+          <div align="center" class="border">
+             <div class="header">
+                <h1 class="word">Home</h1>
+             </div></br></br></br>
+                <h1 class="bottom">
+                     {{session.username}}</br>Welcome to the House Loan Eligibility Checker page...                
+                </h1></br></br></br>
+                <a href="{{ url_for('login') }}" class="btn">Login</a>
+          </div>
+        </div>
+    </body>
+</html>

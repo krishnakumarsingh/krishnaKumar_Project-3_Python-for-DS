@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">          
+
+</head>
+
+<body>
+
+    <div align="center">
+        <h1 style="font-size:30px">House Loan Eligibility Prediction</h1>
+        <div align="left" class="border">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h3>Please Enter the details to check the House Loan Eligibility</h3>
+            
+            <h3>Gender : 
+                <select name="Gender" id="gender" required="required">
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select></h3>
+
+            <h3>Married :
+                <select name="Married" id="married" required="required">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select></h3>
+
+            <h3>Dependents :
+                <input name="Dependents" id="dependents" required="required" value="0"></h3>
+
+            <h3>Education :
+                <select name="Education" id="education" required="required">
+                    <option value="1">Graduate</option>
+                    <option value="0">Non Graduate</option>
+                </select></h3>
+            
+            <h3>Self Employed :
+                <select name="Self_Employed" id="semployed" required="required">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select></h3>
+
+            <h3>Applicant Income : <input name="Income" id="income" type="number" required="required"></h3>
+
+            <h3>Loan Amount (in thousands) $ : <input name="Loan_Amount" id="amount" type="number" required="required"></h3>
+
+            <h3>Loan Term (in months) : <input name="Loan_Term" id="term" type="number" required="required"></h3>
+
+            <h3>Credit History :
+                <select name="Credit_History" id="history" required="required">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select></h3>
+
+            <h3>Property Area :
+                <select name="Property_Area" id="area" required="required">
+                    <option value="0">Urban</option>
+                    <option value="1">Semiurban</option>
+                    <option value="2">Rural</option>
+                </select></h3>
+                
+            <br><button id="sub" type="submit" class="btn">Check Eligibility</button>
+            <br>
+        </form>
+        <br>
+        
+        <a href="{{url_for('logout')}}" class="btn">Log Out</a>
+        <br>
+        <h3>{{ prediction_text }}</h3>
+        </div> 
+    </div>
+
+</body>
+
+</html>
